@@ -1,5 +1,4 @@
 from app.knight import Knight
-from app.battle import knight_battle
 
 KNIGHTS = {
     "lancelot": {
@@ -101,8 +100,8 @@ def battle(knights_config: dict) -> dict:
         )
         for value in knights_config.values()
     ]
-    knight_battle(knights[0], knights[2])
-    knight_battle(knights[1], knights[3])
+    knights[0].battle(knights[2])
+    knights[1].battle(knights[3])
     return {
         knight.name: knight.hp
         for knight in knights
